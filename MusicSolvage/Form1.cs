@@ -47,7 +47,21 @@ namespace MusicSolvage
                 DataRow dr = tabFiles.NewRow();
                 foreach (FileInfo file in di.GetFiles())
                 {
-                    tabFiles.Rows.Add(file.Name, file.CreationTime, file.Length, file.FullName, 0);
+                    try
+                    {
+                        FileStream fs = File.OpenRead(file.FullName);
+                        byte[] b2 = new byte[2];
+                        int res = fs.Read(b2, 0, 2);
+                        fs.Close();
+                        if (b2[0] == 255 && b2[1] > 239)
+                        {
+                            tabFiles.Rows.Add(file.Name, file.CreationTime, file.Length, file.FullName, 0);
+                        }
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
         }
