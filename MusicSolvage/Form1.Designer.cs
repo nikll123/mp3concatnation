@@ -45,6 +45,7 @@
             this.colFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDateTimeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFileSizeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFlag1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsFiles = new System.Data.DataSet();
             this.tabFiles = new System.Data.DataTable();
             this.colFileName = new System.Data.DataColumn();
@@ -52,6 +53,7 @@
             this.colFileSize = new System.Data.DataColumn();
             this.colFileFullName = new System.Data.DataColumn();
             this.colIndex = new System.Data.DataColumn();
+            this.colFlag11 = new System.Data.DataColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtOutputDir = new System.Windows.Forms.TextBox();
             this.btnSelectOutputDir = new System.Windows.Forms.Button();
@@ -218,7 +220,8 @@
             this.colIndexName,
             this.colFileNameDataGridViewTextBoxColumn,
             this.colDateTimeNameDataGridViewTextBoxColumn,
-            this.colFileSizeNameDataGridViewTextBoxColumn});
+            this.colFileSizeNameDataGridViewTextBoxColumn,
+            this.colFlag1});
             this.grdFiles.DataMember = "tabFilesName";
             this.grdFiles.DataSource = this.dsFiles;
             this.grdFiles.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -255,6 +258,13 @@
             this.colFileSizeNameDataGridViewTextBoxColumn.Name = "colFileSizeNameDataGridViewTextBoxColumn";
             this.colFileSizeNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // colFlag1
+            // 
+            this.colFlag1.DataPropertyName = "colFlag1";
+            this.colFlag1.HeaderText = "colFlag1";
+            this.colFlag1.Name = "colFlag1";
+            this.colFlag1.ReadOnly = true;
+            // 
             // dsFiles
             // 
             this.dsFiles.DataSetName = "NewDataSet";
@@ -268,7 +278,8 @@
             this.colDateTime,
             this.colFileSize,
             this.colFileFullName,
-            this.colIndex});
+            this.colIndex,
+            this.colFlag11});
             this.tabFiles.Constraints.AddRange(new System.Data.Constraint[] {
             new System.Data.UniqueConstraint("Constraint1", new string[] {
                         "colFileName"}, true),
@@ -310,6 +321,13 @@
             this.colIndex.Caption = "IndexCaption";
             this.colIndex.ColumnName = "colIndexName";
             this.colIndex.DataType = typeof(byte);
+            // 
+            // colFlag11
+            // 
+            this.colFlag11.Caption = "mp3";
+            this.colFlag11.ColumnName = "colFlag1";
+            this.colFlag11.DataType = typeof(bool);
+            this.colFlag11.ReadOnly = true;
             // 
             // panel1
             // 
@@ -381,15 +399,17 @@
         private System.Data.DataColumn colFileFullName;
         private System.Data.DataColumn colIndex;
         private System.Windows.Forms.Button btnResetIndex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIndexName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFileNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDateTimeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFileSizeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnDeleteAllFiles;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtOutputDir;
         private System.Windows.Forms.Button btnSelectOutputDir;
+        private System.Data.DataColumn colFlag11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIndexName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFileNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateTimeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFileSizeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFlag1;
     }
 }
 
