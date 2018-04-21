@@ -41,11 +41,6 @@
             this.btnDeleteAllFiles = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.grdFiles = new System.Windows.Forms.DataGridView();
-            this.colIndexName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDateTimeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFileSizeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFlag1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsFiles = new System.Data.DataSet();
             this.tabFiles = new System.Data.DataTable();
             this.colFileName = new System.Data.DataColumn();
@@ -58,6 +53,11 @@
             this.txtOutputDir = new System.Windows.Forms.TextBox();
             this.btnSelectOutputDir = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.colIndexName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFlag1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -82,7 +82,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(496, 337);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(531, 337);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // axWindowsMediaPlayer1
@@ -92,7 +92,7 @@
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 3);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(490, 144);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(525, 144);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -114,15 +114,15 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(490, 181);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(525, 181);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btnSelectDir
             // 
             this.btnSelectDir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSelectDir.Location = new System.Drawing.Point(456, 3);
+            this.btnSelectDir.Location = new System.Drawing.Point(488, 3);
             this.btnSelectDir.Name = "btnSelectDir";
-            this.btnSelectDir.Size = new System.Drawing.Size(31, 23);
+            this.btnSelectDir.Size = new System.Drawing.Size(34, 23);
             this.btnSelectDir.TabIndex = 2;
             this.btnSelectDir.Text = "...";
             this.btnSelectDir.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.txtDir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDir.Location = new System.Drawing.Point(3, 3);
             this.txtDir.Name = "txtDir";
-            this.txtDir.Size = new System.Drawing.Size(447, 20);
+            this.txtDir.Size = new System.Drawing.Size(479, 20);
             this.txtDir.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -154,7 +154,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(447, 42);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(479, 42);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // btnMerge
@@ -162,7 +162,7 @@
             this.btnMerge.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMerge.Location = new System.Drawing.Point(151, 3);
             this.btnMerge.Name = "btnMerge";
-            this.btnMerge.Size = new System.Drawing.Size(68, 36);
+            this.btnMerge.Size = new System.Drawing.Size(76, 36);
             this.btnMerge.TabIndex = 0;
             this.btnMerge.Text = "Склеить";
             this.btnMerge.UseVisualStyleBackColor = true;
@@ -175,14 +175,13 @@
             this.txtNewFileName.Name = "txtNewFileName";
             this.txtNewFileName.Size = new System.Drawing.Size(142, 20);
             this.txtNewFileName.TabIndex = 1;
-            this.txtNewFileName.Text = "song";
             // 
             // btnResetIndex
             // 
             this.btnResetIndex.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnResetIndex.Location = new System.Drawing.Point(225, 3);
+            this.btnResetIndex.Location = new System.Drawing.Point(233, 3);
             this.btnResetIndex.Name = "btnResetIndex";
-            this.btnResetIndex.Size = new System.Drawing.Size(68, 36);
+            this.btnResetIndex.Size = new System.Drawing.Size(76, 36);
             this.btnResetIndex.TabIndex = 2;
             this.btnResetIndex.Text = "Reset";
             this.btnResetIndex.UseVisualStyleBackColor = true;
@@ -191,9 +190,9 @@
             // btnDeleteAllFiles
             // 
             this.btnDeleteAllFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteAllFiles.Location = new System.Drawing.Point(299, 3);
+            this.btnDeleteAllFiles.Location = new System.Drawing.Point(315, 3);
             this.btnDeleteAllFiles.Name = "btnDeleteAllFiles";
-            this.btnDeleteAllFiles.Size = new System.Drawing.Size(68, 36);
+            this.btnDeleteAllFiles.Size = new System.Drawing.Size(76, 36);
             this.btnDeleteAllFiles.TabIndex = 3;
             this.btnDeleteAllFiles.Text = "Delete files";
             this.btnDeleteAllFiles.UseVisualStyleBackColor = true;
@@ -202,9 +201,9 @@
             // btnRefresh
             // 
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Location = new System.Drawing.Point(373, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(397, 3);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(71, 36);
+            this.btnRefresh.Size = new System.Drawing.Size(79, 36);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -219,51 +218,18 @@
             this.grdFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIndexName,
             this.colFileNameDataGridViewTextBoxColumn,
-            this.colDateTimeNameDataGridViewTextBoxColumn,
-            this.colFileSizeNameDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.colFlag1});
             this.grdFiles.DataMember = "tabFilesName";
             this.grdFiles.DataSource = this.dsFiles;
             this.grdFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdFiles.Location = new System.Drawing.Point(3, 32);
             this.grdFiles.Name = "grdFiles";
-            this.grdFiles.Size = new System.Drawing.Size(447, 64);
+            this.grdFiles.RowHeadersWidth = 20;
+            this.grdFiles.Size = new System.Drawing.Size(479, 64);
             this.grdFiles.TabIndex = 5;
             this.grdFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFiles_CellDoubleClick);
-            // 
-            // colIndexName
-            // 
-            this.colIndexName.DataPropertyName = "colIndexName";
-            this.colIndexName.HeaderText = "Index";
-            this.colIndexName.Name = "colIndexName";
-            // 
-            // colFileNameDataGridViewTextBoxColumn
-            // 
-            this.colFileNameDataGridViewTextBoxColumn.DataPropertyName = "colFileName";
-            this.colFileNameDataGridViewTextBoxColumn.HeaderText = "File Name";
-            this.colFileNameDataGridViewTextBoxColumn.Name = "colFileNameDataGridViewTextBoxColumn";
-            this.colFileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colDateTimeNameDataGridViewTextBoxColumn
-            // 
-            this.colDateTimeNameDataGridViewTextBoxColumn.DataPropertyName = "colDateTimeName";
-            this.colDateTimeNameDataGridViewTextBoxColumn.HeaderText = "Time";
-            this.colDateTimeNameDataGridViewTextBoxColumn.Name = "colDateTimeNameDataGridViewTextBoxColumn";
-            this.colDateTimeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colFileSizeNameDataGridViewTextBoxColumn
-            // 
-            this.colFileSizeNameDataGridViewTextBoxColumn.DataPropertyName = "colFileSizeName";
-            this.colFileSizeNameDataGridViewTextBoxColumn.HeaderText = "File Size";
-            this.colFileSizeNameDataGridViewTextBoxColumn.Name = "colFileSizeNameDataGridViewTextBoxColumn";
-            this.colFileSizeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colFlag1
-            // 
-            this.colFlag1.DataPropertyName = "colFlag1";
-            this.colFlag1.HeaderText = "colFlag1";
-            this.colFlag1.Name = "colFlag1";
-            this.colFlag1.ReadOnly = true;
             // 
             // dsFiles
             // 
@@ -299,14 +265,14 @@
             // colDateTime
             // 
             this.colDateTime.Caption = "Date Time";
-            this.colDateTime.ColumnName = "colDateTimeName";
+            this.colDateTime.ColumnName = "colDateTime";
             this.colDateTime.DataType = typeof(System.DateTime);
             this.colDateTime.ReadOnly = true;
             // 
             // colFileSize
             // 
             this.colFileSize.Caption = "File size";
-            this.colFileSize.ColumnName = "colFileSizeName";
+            this.colFileSize.ColumnName = "colFileSize";
             this.colFileSize.DataType = typeof(uint);
             this.colFileSize.ReadOnly = true;
             // 
@@ -319,7 +285,7 @@
             // colIndex
             // 
             this.colIndex.Caption = "IndexCaption";
-            this.colIndex.ColumnName = "colIndexName";
+            this.colIndex.ColumnName = "colIndex";
             this.colIndex.DataType = typeof(byte);
             // 
             // colFlag11
@@ -335,7 +301,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 102);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(447, 28);
+            this.panel1.Size = new System.Drawing.Size(479, 28);
             this.panel1.TabIndex = 6;
             // 
             // txtOutputDir
@@ -343,12 +309,12 @@
             this.txtOutputDir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOutputDir.Location = new System.Drawing.Point(0, 0);
             this.txtOutputDir.Name = "txtOutputDir";
-            this.txtOutputDir.Size = new System.Drawing.Size(447, 20);
+            this.txtOutputDir.Size = new System.Drawing.Size(479, 20);
             this.txtOutputDir.TabIndex = 0;
             // 
             // btnSelectOutputDir
             // 
-            this.btnSelectOutputDir.Location = new System.Drawing.Point(456, 102);
+            this.btnSelectOutputDir.Location = new System.Drawing.Point(488, 102);
             this.btnSelectOutputDir.Name = "btnSelectOutputDir";
             this.btnSelectOutputDir.Size = new System.Drawing.Size(31, 23);
             this.btnSelectOutputDir.TabIndex = 7;
@@ -356,11 +322,49 @@
             this.btnSelectOutputDir.UseVisualStyleBackColor = true;
             this.btnSelectOutputDir.Click += new System.EventHandler(this.btnSelectOutputDir_Click);
             // 
+            // colIndexName
+            // 
+            this.colIndexName.DataPropertyName = "colIndex";
+            this.colIndexName.FillWeight = 20F;
+            this.colIndexName.HeaderText = "Index";
+            this.colIndexName.Name = "colIndexName";
+            this.colIndexName.Width = 40;
+            // 
+            // colFileNameDataGridViewTextBoxColumn
+            // 
+            this.colFileNameDataGridViewTextBoxColumn.DataPropertyName = "colFileName";
+            this.colFileNameDataGridViewTextBoxColumn.HeaderText = "File Name";
+            this.colFileNameDataGridViewTextBoxColumn.Name = "colFileNameDataGridViewTextBoxColumn";
+            this.colFileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colFileNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "colDateTime";
+            this.dataGridViewTextBoxColumn1.HeaderText = "DateTime";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "colFileSize";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Size";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // colFlag1
+            // 
+            this.colFlag1.DataPropertyName = "colFlag1";
+            this.colFlag1.HeaderText = "mp3";
+            this.colFlag1.Name = "colFlag1";
+            this.colFlag1.ReadOnly = true;
+            this.colFlag1.Width = 40;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 361);
+            this.ClientSize = new System.Drawing.Size(555, 361);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Склеиватель MP3";
@@ -407,8 +411,8 @@
         private System.Data.DataColumn colFlag11;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIndexName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFileNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDateTimeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFileSizeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFlag1;
     }
 }

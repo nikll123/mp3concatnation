@@ -17,107 +17,54 @@ namespace MusicSolvage
             //txtDir.Text = @"C:\Users\Вася\AppData\Local\Google\Chrome\User Data\Default\Media Cache";
             txtDir.Text = @"C:\Users\Вася\AppData\Local\Yandex\YandexBrowser\User Data\Default\Media Cache\";
             txtOutputDir.Text = @"C:\Users\Вася\Music";
-            GetFileList();
+            RefreshForm();
         }
 
         private void btnSelectDir_Click(object sender, EventArgs e)
         {
-            txtDir.Text = GetNewDir(txtDir.Text);
-            GetFileList();
+            txtDir.Text = Program.GetNewDir(txtDir.Text);
+            RefreshForm();
         }
 
-        private string GetNewDir(string dir)
-        {
-            folderBrowserDialog1.SelectedPath = dir;
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                dir = folderBrowserDialog1.SelectedPath;
-            }
-            return dir;
-        }
-
-        private void GetFileList()
+        private void RefreshForm()
         {
             tabFiles.Clear();
-            DirectoryInfo di = new DirectoryInfo(txtDir.Text);
-            if (di.Exists)
+            Program.GetFileList(txtDir.Text, out FileInfo[] fiv, out bool[] mp3v);
+            for (int i = 0; i < fiv.Length; i++)
             {
-                DataRow dr = tabFiles.NewRow();
-                foreach (FileInfo file in di.GetFiles())
-                {
-                    bool colFlag1 = false;
-                    try
-                    {
-                        FileStream fs = File.OpenRead(file.FullName);
-                        byte[] b2 = new byte[2];
-                        int res = fs.Read(b2, 0, 2);
-                        fs.Close();
-                        colFlag1 = (b2[0] == 255 && b2[1] > 239);
-                    }
-                    catch
-                    {
-                    }
-                    tabFiles.Rows.Add(file.Name, file.CreationTime, file.Length, file.FullName, 0, colFlag1);
-                }
+                tabFiles.Rows.Add(fiv[i].Name, fiv[i].CreationTime, fiv[i].Length, fiv[i].FullName, 0, mp3v[i]);
             }
         }
 
         private void btnMerge_Click(object sender, EventArgs e)
         {
-            string newfilename = txtOutputDir.Text + "\\" + txtNewFileName.Text.Trim() + ".mp3";
+            string newfilename = txtNewFileName.Text.Trim();
             if (newfilename != String.Empty)
             {
-                string filter = String.Format("colIndexName > 0");
-                DataRow[] selection = tabFiles.Select(filter, "colIndexName");
-
-                Merge1(newfilename, selection, false);
+                newfilename = txtOutputDir.Text + "\\" + newfilename + ".mp3";
+                string filter = String.Format("colIndex > 0");
+                DataRow[] selection = tabFiles.Select(filter, "colIndex");
+                int count = selection.Length;
+                if (count > 0)
+                {
+                    string[] fnv = new string[count];
+                    int i = 0;
+                    foreach (DataRow dr in selection)
+                    {
+                        fnv[i] = dr[colFileFullName] as string;
+                        i++;
+                    }
+                    int res = Program.Merge(fnv, newfilename);
+                }
+                else
+                {
+                    MessageBox.Show("Индексы не указаны.");
+                }
             }
-        }
-
-        //private void Merge2(string newfilename, DataRow[] selection)
-        //{
-        //    StringBuilder sb = new StringBuilder("copy /B ");
-        //    foreach (DataRow dr in selection)
-        //    {
-        //        sb.Append("\"");
-        //        sb.Append(dr[colFileFullName] as string);
-        //        sb.Append("\"");
-        //        sb.Append("+");
-        //    }
-        //    sb.Remove(sb.Length - 1, 1);
-        //    sb.Append(" \"");
-        //    sb.Append(newfilename);
-        //    sb.Append("\"");
-
-        //    string copycmd = sb.ToString();
-
-        //    Process cmd = new Process();
-        //    cmd.StartInfo.FileName = "cmd.exe";
-        //    cmd.StartInfo.RedirectStandardInput = true;
-        //    cmd.StartInfo.RedirectStandardOutput = true;
-        //    //cmd.StartInfo.CreateNoWindow = true;
-        //    cmd.StartInfo.UseShellExecute = false;
-        //    cmd.Start();
-
-        //    cmd.StandardInput.WriteLine(copycmd);
-        //    cmd.StandardInput.Flush();
-        //    cmd.StandardInput.Close();
-        //    cmd.WaitForExit();
-        //    Debug.WriteLine(cmd.StandardOutput.ReadToEnd());
-        //}
-
-
-        private void Merge1(string newfilename, DataRow[] selection, bool mp3)
-        {
-            byte[] btFrame;
-            byte[] btAllFrames = new byte[0];
-            foreach (DataRow dr in selection)
+            else
             {
-                btFrame = File.ReadAllBytes(dr[colFileFullName] as string);
-                btAllFrames = btAllFrames.Concat(btFrame).ToArray();
+                MessageBox.Show("Имя файла слияния не указано.");
             }
-
-            File.WriteAllBytes(newfilename, btAllFrames); // Requires System.IO
         }
 
 
@@ -145,49 +92,21 @@ namespace MusicSolvage
                 DirectoryInfo di = new DirectoryInfo(txtDir.Text);
                 if (di.Exists)
                 {
-                    foreach (FileInfo fi in di.GetFiles())
-                    {
-                        try
-                        {
-                            File.Delete(fi.FullName);
-                        }
-                        catch (Exception)
-                        {
-                            Debug.WriteLine("Error on deletion of:  {0}", fi.FullName);
-                        }
-                    }
-                    GetFileList();
+                    Program.DeleteFiles(di);
+                    RefreshForm();
                 }
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            GetFileList();
+            RefreshForm();
         }
 
         private void btnSelectOutputDir_Click(object sender, EventArgs e)
         {
-            txtOutputDir.Text = GetNewDir(txtOutputDir.Text);
+            txtOutputDir.Text = Program.GetNewDir(txtOutputDir.Text);
         }
-
-        //private void CloseWaveOut()
-        //{
-        //    if (waveOutDevice != null)
-        //    {
-        //        waveOutDevice.Stop();
-        //    }
-        //    if (mainOutputStream != null)
-        //    {
-        //        audioFileReader.Dispose();
-        //        audioFileReader = null;
-        //    }
-        //    if (waveOutDevice != null)
-        //    {
-        //        waveOutDevice.Dispose();
-        //        waveOutDevice = null;
-        //    }
-        //}
     }
 }
 
