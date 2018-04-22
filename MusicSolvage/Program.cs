@@ -68,10 +68,11 @@ namespace MusicSolvage
             }
         }
 
-        public static int Merge(string[] fnv, string newfilename)
+        public static string Merge(string[] fnv, string newfilename)
         {
             byte[] btFrame;
             byte[] btAllFrames = new byte[0];
+            string errMsg = "";
             foreach (string fn in fnv)
             {
                 try
@@ -81,12 +82,11 @@ namespace MusicSolvage
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
-                    return 1;
+                    errMsg = e.Message;
                 }
             }
             File.WriteAllBytes(newfilename, btAllFrames); // Requires System.IO
-            return 0;
+            return errMsg;
         }
 
         public static void DeleteFiles(DirectoryInfo  di)

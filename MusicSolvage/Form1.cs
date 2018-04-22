@@ -38,6 +38,7 @@ namespace MusicSolvage
 
         private void btnMerge_Click(object sender, EventArgs e)
         {
+            string errMsg = String.Empty;
             string newfilename = txtNewFileName.Text.Trim();
             if (newfilename != String.Empty)
             {
@@ -54,16 +55,25 @@ namespace MusicSolvage
                         fnv[i] = dr[colFileFullName] as string;
                         i++;
                     }
-                    int res = Program.Merge(fnv, newfilename);
+                    errMsg = Program.Merge(fnv, newfilename);
                 }
                 else
                 {
-                    MessageBox.Show("Индексы не указаны.");
+                    errMsg = "Индексы не указаны.";
                 }
             }
             else
             {
-                MessageBox.Show("Имя файла слияния не указано.");
+                errMsg = "Имя файла слияния не указано.";
+            }
+
+            if (errMsg != String.Empty)
+            {
+                MessageBox.Show(errMsg);
+            }
+            else
+            {
+                txtNewFileName.Text = String.Empty;
             }
         }
 
