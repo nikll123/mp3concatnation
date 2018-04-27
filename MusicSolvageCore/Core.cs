@@ -41,7 +41,6 @@ namespace MusicSolvage
             }
         }
 
-
         public static FileInfoMp3[] GetFileList(string dir)
         {
             FileInfoMp3[] fimp3v = new FileInfoMp3[0];
@@ -57,6 +56,5 @@ namespace MusicSolvage
             }
             return fimp3v;
         }
-
     }
 }
