@@ -77,7 +77,6 @@ namespace MusicSolvage
             }
         }
 
-
         private void grdFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataRowView drv = (sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView;

@@ -41,6 +41,11 @@
             this.btnDeleteAllFiles = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.grdFiles = new System.Windows.Forms.DataGridView();
+            this.colIndexName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFlag1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsFiles = new System.Data.DataSet();
             this.tabFiles = new System.Data.DataTable();
             this.colFileName = new System.Data.DataColumn();
@@ -53,11 +58,6 @@
             this.txtOutputDir = new System.Windows.Forms.TextBox();
             this.btnSelectOutputDir = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.colIndexName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFlag1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -231,6 +231,44 @@
             this.grdFiles.TabIndex = 5;
             this.grdFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFiles_CellDoubleClick);
             // 
+            // colIndexName
+            // 
+            this.colIndexName.DataPropertyName = "colIndex";
+            this.colIndexName.FillWeight = 20F;
+            this.colIndexName.HeaderText = "Index";
+            this.colIndexName.Name = "colIndexName";
+            this.colIndexName.Width = 40;
+            // 
+            // colFileNameDataGridViewTextBoxColumn
+            // 
+            this.colFileNameDataGridViewTextBoxColumn.DataPropertyName = "colFileName";
+            this.colFileNameDataGridViewTextBoxColumn.HeaderText = "File Name";
+            this.colFileNameDataGridViewTextBoxColumn.Name = "colFileNameDataGridViewTextBoxColumn";
+            this.colFileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colFileNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "colDateTime";
+            this.dataGridViewTextBoxColumn1.HeaderText = "DateTime";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "colFileSize";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Size";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // colFlag1
+            // 
+            this.colFlag1.DataPropertyName = "colFlag1";
+            this.colFlag1.HeaderText = "mp3";
+            this.colFlag1.Name = "colFlag1";
+            this.colFlag1.ReadOnly = true;
+            this.colFlag1.Width = 40;
+            // 
             // dsFiles
             // 
             this.dsFiles.DataSetName = "NewDataSet";
@@ -321,44 +359,6 @@
             this.btnSelectOutputDir.Text = "...";
             this.btnSelectOutputDir.UseVisualStyleBackColor = true;
             this.btnSelectOutputDir.Click += new System.EventHandler(this.btnSelectOutputDir_Click);
-            // 
-            // colIndexName
-            // 
-            this.colIndexName.DataPropertyName = "colIndex";
-            this.colIndexName.FillWeight = 20F;
-            this.colIndexName.HeaderText = "Index";
-            this.colIndexName.Name = "colIndexName";
-            this.colIndexName.Width = 40;
-            // 
-            // colFileNameDataGridViewTextBoxColumn
-            // 
-            this.colFileNameDataGridViewTextBoxColumn.DataPropertyName = "colFileName";
-            this.colFileNameDataGridViewTextBoxColumn.HeaderText = "File Name";
-            this.colFileNameDataGridViewTextBoxColumn.Name = "colFileNameDataGridViewTextBoxColumn";
-            this.colFileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.colFileNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "colDateTime";
-            this.dataGridViewTextBoxColumn1.HeaderText = "DateTime";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "colFileSize";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Size";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // colFlag1
-            // 
-            this.colFlag1.DataPropertyName = "colFlag1";
-            this.colFlag1.HeaderText = "mp3";
-            this.colFlag1.Name = "colFlag1";
-            this.colFlag1.ReadOnly = true;
-            this.colFlag1.Width = 40;
             // 
             // Form1
             // 

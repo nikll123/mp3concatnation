@@ -7,15 +7,15 @@ using System.IO;
 
 namespace MusicSolvage
 {
-    struct fileInfo
-    {
-        public string Name;
-        public DateTime CreationTime;
-        public long Length;
-        public string FullName;
-        public ushort index;
-        public bool colFlag1;
-    }
+    //struct fileInfo
+    //{
+    //    public string Name;
+    //    public DateTime CreationTime;
+    //    public long Length;
+    //    public string FullName;
+    //    public ushort index;
+    //    public bool colFlag1;
+    //}
 
     static class Program
     {
@@ -30,6 +30,7 @@ namespace MusicSolvage
             Application.Run(new Form1());
         }
 
+        //-
         public static string GetNewDir(string dir)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
@@ -41,32 +42,6 @@ namespace MusicSolvage
             return dir;
         }
 
-        public static void GetFileList(string dir, out FileInfo[] fiv, out bool[] mp3v)
-        {
-            fiv = new FileInfo[0];
-            mp3v = new bool[0];
-            DirectoryInfo di = new DirectoryInfo(dir);
-            if (di.Exists)
-            {
-                fiv = di.GetFiles();
-                mp3v = new bool[fiv.Length];
-
-                for (int i = 0; i < fiv.Length; i++)
-                {
-                    try
-                    {
-                        FileStream fs = File.OpenRead(fiv[i].FullName);
-                        byte[] b2 = new byte[2];
-                        int res = fs.Read(b2, 0, 2);
-                        fs.Close();
-                        mp3v[i] = (b2[0] == 255 && b2[1] > 239);
-                    }
-                    catch
-                    {
-                    }
-                }
-            }
-        }
 
         public static string Merge(string[] fnv, string newfilename)
         {

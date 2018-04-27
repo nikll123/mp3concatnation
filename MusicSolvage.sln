@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicSolvage", "MusicSolvage\MusicSolvage.csproj", "{77FC36A9-1689-419E-9940-82B0CB93007F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicSolvageCore", "MusicSolvageCore\MusicSolvageCore.csproj", "{8B59ACC5-55F0-4690-ACC7-6B8C4C742EDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{77FC36A9-1689-419E-9940-82B0CB93007F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77FC36A9-1689-419E-9940-82B0CB93007F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77FC36A9-1689-419E-9940-82B0CB93007F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B59ACC5-55F0-4690-ACC7-6B8C4C742EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B59ACC5-55F0-4690-ACC7-6B8C4C742EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B59ACC5-55F0-4690-ACC7-6B8C4C742EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B59ACC5-55F0-4690-ACC7-6B8C4C742EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
