@@ -15,8 +15,8 @@ namespace MusicSolvage
         {
             InitializeComponent();
             //txtDir.Text = @"C:\Users\Вася\AppData\Local\Google\Chrome\User Data\Default\Media Cache";
-            txtDir.Text = @"C:\Users\Вася\AppData\Local\Yandex\YandexBrowser\User Data\Default\Media Cache\";
-            txtOutputDir.Text = @"C:\Users\Вася\Music";
+            txtDir.Text = @"C:\Users\Vasya\AppData\Local\Yandex\YandexBrowser\User Data\Default\Media Cache\";
+            txtOutputDir.Text = @"C:\Users\Vasya\Music";
             RefreshForm();
         }
 
