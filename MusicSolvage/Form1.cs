@@ -11,6 +11,8 @@ namespace MusicSolvage
 {
     public partial class Form1 : Form
     {
+        int lastId = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -94,6 +96,7 @@ namespace MusicSolvage
             {
                 dr[colIndex] = 0;
             }
+            lastId = 1;
         }
 
         private void btnDeleteAllFiles_Click(object sender, EventArgs e)
@@ -117,6 +120,17 @@ namespace MusicSolvage
         private void btnSelectOutputDir_Click(object sender, EventArgs e)
         {
             txtOutputDir.Text = Program.GetNewDir(txtOutputDir.Text);
+        }
+
+        private void grdFiles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if( e.ColumnIndex == 0)
+            {
+                DataRowView drv = (sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView;
+                 drv.Row[colIndex] = lastId;
+                Debug.WriteLine(lastId);
+                lastId = lastId + 1;
+            }
         }
     }
 }

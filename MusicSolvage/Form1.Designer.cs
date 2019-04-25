@@ -82,7 +82,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(531, 337);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(523, 368);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // axWindowsMediaPlayer1
@@ -92,7 +92,7 @@
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 3);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(525, 144);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(517, 144);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -114,13 +114,13 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(525, 181);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(517, 212);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btnSelectDir
             // 
             this.btnSelectDir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSelectDir.Location = new System.Drawing.Point(488, 3);
+            this.btnSelectDir.Location = new System.Drawing.Point(480, 3);
             this.btnSelectDir.Name = "btnSelectDir";
             this.btnSelectDir.Size = new System.Drawing.Size(34, 23);
             this.btnSelectDir.TabIndex = 2;
@@ -133,7 +133,7 @@
             this.txtDir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDir.Location = new System.Drawing.Point(3, 3);
             this.txtDir.Name = "txtDir";
-            this.txtDir.Size = new System.Drawing.Size(479, 20);
+            this.txtDir.Size = new System.Drawing.Size(471, 20);
             this.txtDir.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -150,11 +150,11 @@
             this.tableLayoutPanel3.Controls.Add(this.btnDeleteAllFiles, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnRefresh, 4, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 136);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 167);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(479, 42);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(471, 42);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // btnMerge
@@ -162,7 +162,7 @@
             this.btnMerge.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMerge.Location = new System.Drawing.Point(151, 3);
             this.btnMerge.Name = "btnMerge";
-            this.btnMerge.Size = new System.Drawing.Size(76, 36);
+            this.btnMerge.Size = new System.Drawing.Size(74, 36);
             this.btnMerge.TabIndex = 0;
             this.btnMerge.Text = "Склеить";
             this.btnMerge.UseVisualStyleBackColor = true;
@@ -179,9 +179,9 @@
             // btnResetIndex
             // 
             this.btnResetIndex.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnResetIndex.Location = new System.Drawing.Point(233, 3);
+            this.btnResetIndex.Location = new System.Drawing.Point(231, 3);
             this.btnResetIndex.Name = "btnResetIndex";
-            this.btnResetIndex.Size = new System.Drawing.Size(76, 36);
+            this.btnResetIndex.Size = new System.Drawing.Size(74, 36);
             this.btnResetIndex.TabIndex = 2;
             this.btnResetIndex.Text = "Reset";
             this.btnResetIndex.UseVisualStyleBackColor = true;
@@ -190,9 +190,9 @@
             // btnDeleteAllFiles
             // 
             this.btnDeleteAllFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteAllFiles.Location = new System.Drawing.Point(315, 3);
+            this.btnDeleteAllFiles.Location = new System.Drawing.Point(311, 3);
             this.btnDeleteAllFiles.Name = "btnDeleteAllFiles";
-            this.btnDeleteAllFiles.Size = new System.Drawing.Size(76, 36);
+            this.btnDeleteAllFiles.Size = new System.Drawing.Size(74, 36);
             this.btnDeleteAllFiles.TabIndex = 3;
             this.btnDeleteAllFiles.Text = "Delete files";
             this.btnDeleteAllFiles.UseVisualStyleBackColor = true;
@@ -201,9 +201,9 @@
             // btnRefresh
             // 
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Location = new System.Drawing.Point(397, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(391, 3);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(79, 36);
+            this.btnRefresh.Size = new System.Drawing.Size(77, 36);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -227,8 +227,9 @@
             this.grdFiles.Location = new System.Drawing.Point(3, 32);
             this.grdFiles.Name = "grdFiles";
             this.grdFiles.RowHeadersWidth = 20;
-            this.grdFiles.Size = new System.Drawing.Size(479, 64);
+            this.grdFiles.Size = new System.Drawing.Size(471, 95);
             this.grdFiles.TabIndex = 5;
+            this.grdFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFiles_CellClick);
             this.grdFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFiles_CellDoubleClick);
             // 
             // colIndexName
@@ -337,9 +338,9 @@
             // 
             this.panel1.Controls.Add(this.txtOutputDir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 102);
+            this.panel1.Location = new System.Drawing.Point(3, 133);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 28);
+            this.panel1.Size = new System.Drawing.Size(471, 28);
             this.panel1.TabIndex = 6;
             // 
             // txtOutputDir
@@ -347,12 +348,12 @@
             this.txtOutputDir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOutputDir.Location = new System.Drawing.Point(0, 0);
             this.txtOutputDir.Name = "txtOutputDir";
-            this.txtOutputDir.Size = new System.Drawing.Size(479, 20);
+            this.txtOutputDir.Size = new System.Drawing.Size(471, 20);
             this.txtOutputDir.TabIndex = 0;
             // 
             // btnSelectOutputDir
             // 
-            this.btnSelectOutputDir.Location = new System.Drawing.Point(488, 102);
+            this.btnSelectOutputDir.Location = new System.Drawing.Point(480, 133);
             this.btnSelectOutputDir.Name = "btnSelectOutputDir";
             this.btnSelectOutputDir.Size = new System.Drawing.Size(31, 23);
             this.btnSelectOutputDir.TabIndex = 7;
@@ -364,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 361);
+            this.ClientSize = new System.Drawing.Size(547, 392);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Склеиватель MP3";
