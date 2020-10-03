@@ -37,7 +37,7 @@ namespace MusicSolvage.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nikll\\Music")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nikll\\Music\\")]
         public string pathOutput {
             get {
                 return ((string)(this["pathOutput"]));

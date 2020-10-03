@@ -6,7 +6,7 @@
       <Value Profile="(Default)">C:\Users\nikll\AppData\Local\Yandex\YandexBrowser\User Data\Default\Cache\</Value>
     </Setting>
     <Setting Name="pathOutput" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\nikll\Music</Value>
+      <Value Profile="(Default)">C:\Users\nikll\Music\</Value>
     </Setting>
   </Settings>
 </SettingsFile>
