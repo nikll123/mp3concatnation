@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MusicSolvage.Properties {
+namespace MusicSolvageCore.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,30 +20,6 @@ namespace MusicSolvage.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nikll\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Cache\\")]
-        public string pathCache {
-            get {
-                return ((string)(this["pathCache"]));
-            }
-            set {
-                this["pathCache"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nikll\\Music")]
-        public string pathOutput {
-            get {
-                return ((string)(this["pathOutput"]));
-            }
-            set {
-                this["pathOutput"] = value;
             }
         }
     }

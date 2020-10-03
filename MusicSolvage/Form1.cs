@@ -16,10 +16,10 @@ namespace MusicSolvage
         public Form1()
         {
             InitializeComponent();
-            //txtDir.Text = @"C:\Users\Вася\AppData\Local\Google\Chrome\User Data\Default\Media Cache";
-            txtDir.Text = @"C:\Users\nikll\AppData\Local\Yandex\YandexBrowser\User Data\Default\Cache\";
-            txtOutputDir.Text = @"C:\Users\nikll\Music";
+            txtDir.Text = Properties.Settings.Default.pathCache; //  @"C:\Users\nikll\AppData\Local\Yandex\YandexBrowser\User Data\Default\Cache\";
+            txtOutputDir.Text = Properties.Settings.Default.pathOutput; //   @"C:\Users\nikll\Music";
             RefreshForm();
+
         }
 
         private void btnSelectDir_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace MusicSolvage
             string newfilename = txtNewFileName.Text.Trim();
             if (newfilename != String.Empty)
             {
-                newfilename = txtOutputDir.Text + "\\" + newfilename + ".mp3";
+                newfilename = txtOutputDir.Text + newfilename + ".mp3";
                 string filter = String.Format("colIndex > 0");
                 DataRow[] selection = tabFiles.Select(filter, "colIndex");
                 int count = selection.Length;
@@ -83,11 +83,7 @@ namespace MusicSolvage
 
         private void grdFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRowView drv = (sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView;
-            string fullname = drv.Row[colFileFullName] as string;
-            Debug.WriteLine(fullname);
-            Debug.WriteLine(drv.Row[colFileName] as string);
-            axWindowsMediaPlayer1.URL = fullname;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void btnResetIndex_Click(object sender, EventArgs e)
@@ -124,9 +120,13 @@ namespace MusicSolvage
 
         private void grdFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if( e.ColumnIndex == 0)
+            DataRowView drv = (sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView;
+            //DataRowView drv = (sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView;
+            string fullname = drv.Row[colFileFullName] as string;
+            axWindowsMediaPlayer1.URL = fullname;
+            Debug.WriteLine(fullname);
+            if ( e.ColumnIndex == 0)
             {
-                DataRowView drv = (sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView;
                  drv.Row[colIndex] = lastId;
                 Debug.WriteLine(lastId);
                 lastId = lastId + 1;
